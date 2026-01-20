@@ -13,6 +13,9 @@
       "**/@nestjs/**"
     ]
   },
+  "engines": {
+    "node": "20.x"
+  },
   "scripts": {
     "format": "prettier  \"{apps,libs}/**/*.{ts,tsx,js,json}\" --ignore-path .gitignore",
     "format:check": "yarn format --check",
