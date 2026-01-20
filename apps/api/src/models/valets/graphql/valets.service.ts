@@ -8,7 +8,6 @@ import { UpdateValetInput } from './dtos/update-valet.input'
 export class ValetsService {
   constructor(private readonly prisma: PrismaService) {}
   create(createValetInput: CreateValetInput) {
-    // console.log("create-valet input: ", {createValetInput})
     return this.prisma.valet.create({
       data: createValetInput,
     })

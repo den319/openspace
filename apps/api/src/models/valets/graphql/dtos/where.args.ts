@@ -74,7 +74,7 @@ export class ValetWhereInput extends PartialType(ValetWhereInputStrict) {
 export class ValetListRelationFilter {
   @Field(() => ValetWhereInput, { nullable: true })
   every?: ValetWhereInput
-  @Field(() => ValetWhereInput, { nullable: true })  
+  @Field(() => ValetWhereInput, { nullable: true })
   some?: ValetWhereInput
   @Field(() => ValetWhereInput, { nullable: true })
   none?: ValetWhereInput

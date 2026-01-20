@@ -56,8 +56,6 @@ export class AddressesController {
   findAll(
     @Query() { skip, take, order, sortBy, search, searchBy }: AddressQueryDto,
   ) {
-    console.log({ search, searchBy })
-
     const where =
       search && searchBy
         ? QueryBuilder.buildWhereClause<Prisma.AddressWhereInput>(

@@ -45,11 +45,6 @@ export class StripeController {
 
     const { uid, bookingData } = session.metadata
 
-    // console.log('=== Stripe Success Handler ===')
-    // console.log('session.metadata:', session.metadata)
-    // console.log('uid:', uid)
-    // console.log('bookingData:', bookingData)
-
     if (!uid) {
       throw new BadRequestException('User ID missing from session metadata')
     }
@@ -61,13 +56,6 @@ export class StripeController {
     }
 
     const bookingInput: CreateBookingInput = JSON.parse(bookingData)
-
-    // if (!bookingData.customerId) {
-    //   bookingData.customerId = uid
-    // }
-
-    // console.log('Final bookingData:', bookingData)
-    // console.log('==============================')
 
     const newBooking = await this.bookingService.create(bookingInput)
     res.redirect(process.env.BOOKINGS_REDIRECT_URL)

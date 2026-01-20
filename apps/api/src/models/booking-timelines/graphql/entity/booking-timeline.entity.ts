@@ -1,5 +1,8 @@
 import { Field, ObjectType } from '@nestjs/graphql'
-import { BookingStatus, BookingTimeline as BookingTimelineType } from '@prisma/client'
+import {
+  BookingStatus,
+  BookingTimeline as BookingTimelineType,
+} from '@prisma/client'
 import { RestrictProperties } from 'src/common/dtos/common.input'
 
 @ObjectType()

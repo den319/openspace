@@ -36,8 +36,6 @@ export const RegisterForm = ({ className, role }: ISignupFormProps) => {
             },
           })
 
-          console.log({ data })
-
           toast.success(`User ${data?.registerWithCredentials?.uid} created 🎉`)
 
           await signIn('credentials', {

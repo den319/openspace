@@ -20,8 +20,6 @@ export const IsValet = ({
     return <LoaderPanel text="Loading company..." />
   }
 
-  console.log({valet: data})
-
   if (!data?.valetMe?.companyId)
     return (
       <AlertSection>

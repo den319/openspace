@@ -25,7 +25,6 @@ export class BookingsService {
     totalPrice,
     valetAssignment,
   }: CreateBookingInput) {
-    // console.log("customer id in booking service: ", {customerId})
     // Create customer
     const customer = await this.prisma.customer.findUnique({
       where: { uid: customerId },

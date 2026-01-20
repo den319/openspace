@@ -6,9 +6,8 @@ let prisma
 async function main() {
   prisma = new PrismaClient()
 
-  // Create or update the default company
   const company = await prisma.company.upsert({
-    where: { displayName: 'OpenSpace'},
+    where: { displayName: 'OpenSpace' },
     update: {},
     create: {
       displayName: 'OpenSpace',

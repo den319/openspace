@@ -68,7 +68,7 @@ export const AddValet = () => {
           </HtmlLabel>
           <HtmlLabel title="Licence ID" error={errors.licenceID?.message}>
             <HtmlInput
-              className='uppercase'
+              className="uppercase"
               placeholder="Licence ID of the valet"
               {...register('licenceID')}
             />

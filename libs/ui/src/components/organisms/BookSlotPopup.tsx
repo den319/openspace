@@ -265,8 +265,6 @@ export const createBookingSession = async (
 
     const checkoutSession = await response.json()
 
-    // console.log('Received session:', checkoutSession)
-
     const publishableKey = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
 
     const stripe = await loadStripe(publishableKey || '')

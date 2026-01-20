@@ -40,8 +40,6 @@ export const SearchPage = () => {
     [setValue],
   )
 
-  // console.log(formData)
-
   return (
     <Map
       onLoad={(e) => handleMapChange(e.target)}

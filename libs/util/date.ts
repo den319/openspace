@@ -62,8 +62,6 @@ export const getTimeUnits = (totalSeconds: number): { timeString: string } => {
 
   const parts: string[] = []
 
-  // console.log({totalSeconds})
-
   if (totalSeconds >= SECONDS_IN_YEAR) {
     const years = Math.floor(totalSeconds / SECONDS_IN_YEAR)
     const remainingSeconds = totalSeconds % SECONDS_IN_YEAR

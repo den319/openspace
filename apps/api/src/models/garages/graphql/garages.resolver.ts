@@ -99,8 +99,6 @@ export class GaragesResolver {
       )
     }
 
-    // console.log("date for garages: ", {startDate, endDate, start, end, dateFilter, locationFilter})
-
     const { where = {}, ...garageFilters } = args || {}
 
     return this.prisma.garage.findMany({

@@ -19,7 +19,6 @@ export const ShowGarages = () => {
   useEffect(() => {
     if (variables) {
       searchGarages({ variables })
-      // console.log({ variables })
     }
   }, [variables])
 
@@ -27,7 +26,6 @@ export const ShowGarages = () => {
   const loading = debouncing || garagesLoading
 
   if (error) {
-    // console.log({error})
     return (
       <Panel
         position="center-center"

@@ -47,8 +47,6 @@ export class UsersController {
   findAll(
     @Query() { skip, take, order, sortBy, search, searchBy }: UserQueryDto,
   ) {
-    console.log({ search, searchBy })
-
     const where =
       search && searchBy
         ? QueryBuilder.buildWhereClause<Prisma.UserWhereInput>(

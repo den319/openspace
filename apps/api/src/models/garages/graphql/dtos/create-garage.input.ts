@@ -3,7 +3,13 @@ import { Garage } from '../entity/garage.entity'
 import { CreateAddressInputWithoutGarageId } from 'src/models/addresses/graphql/dtos/create-address.input'
 import { CreateSlotInputWithoutGarageId } from 'src/models/slots/graphql/dtos/create-slot.input'
 import { ApiProperty } from '@nestjs/swagger'
-import { IsArray, IsNotEmpty, IsOptional, IsString, ValidateNested } from 'class-validator'
+import {
+  IsArray,
+  IsNotEmpty,
+  IsOptional,
+  IsString,
+  ValidateNested,
+} from 'class-validator'
 import { Type } from 'class-transformer'
 
 @InputType()

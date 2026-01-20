@@ -45,14 +45,8 @@ export class UsersResolver {
   async registerWithCredentials(
     @Args('registerWithCredentialsInput')
     args: RegisterWithCredentialsInput,
-    // @Context() context: any,
   ) {
-    // console.log({args})
-    // const req = context.req
-    return this.usersService.registerWithCredentials(
-      args,
-      // req
-    )
+    return this.usersService.registerWithCredentials(args)
   }
 
   // SECURITY NOTE: These endpoints are public and vulnerable to abuse
@@ -65,7 +59,6 @@ export class UsersResolver {
   async registerWithProvider(
     @Args('registerWithProviderInput') args: RegisterWithProviderInput,
   ) {
-    // console.log({args})
     return this.usersService.registerWithProvider(args)
   }
 
@@ -95,7 +88,6 @@ export class UsersResolver {
   @AllowAuthenticated()
   @Query(() => User, { name: 'user' })
   findOne(@Args() args: FindUniqueUserArgs, @GetUser() user: GetUserType) {
-    // console.log({args: args})
     checkRowLevelPermission(user, args.where.uid)
     return this.usersService.findOne(args)
   }

@@ -19,11 +19,6 @@ export default class StripeService {
     uid,
     bookingData,
   }: CreateStripeDto) {
-    // console.log('=== Stripe Session Data ===')
-    // console.log('uid:', uid)
-    // console.log('bookingData:', bookingData)
-    // console.log('bookingData.customerId:', bookingData.customerId)
-    // console.log('===========================')
     const session = await this.stripe.checkout.sessions.create({
       payment_method_types: ['card'],
       line_items: Object.entries(totalPriceObj)

@@ -1,6 +1,13 @@
 import { Field, Float, InputType, Int } from '@nestjs/graphql'
 import { SlotType } from '@prisma/client'
-import { IsEnum, IsInt, IsNotEmpty, IsNumber, IsOptional, IsString } from 'class-validator'
+import {
+  IsEnum,
+  IsInt,
+  IsNotEmpty,
+  IsNumber,
+  IsOptional,
+  IsString,
+} from 'class-validator'
 import { ApiProperty } from '@nestjs/swagger'
 
 @InputType()
