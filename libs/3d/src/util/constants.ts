@@ -1,6 +1,6 @@
 export const WORLD_DURATION = 27
 
-export const WORLD_START = -170
+export const WORLD_START = -200
 export const WORLD_END = 400
 
 export const yellowColor = 'hsl(52, 100%, 50%)'
