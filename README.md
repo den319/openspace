@@ -7,10 +7,14 @@
 [![GraphQL](https://img.shields.io/badge/GraphQL-E10098?logo=graphql&logoColor=white)](https://graphql.org/)
 [![Prisma](https://img.shields.io/badge/Prisma-2D3748?logo=prisma&logoColor=white)](https://www.prisma.io/)
 
-![OpenSpace Banner Image]
-*[Add a banner image showing the OpenSpace logo and key features]*
-
 > **OpenSpace** is a comprehensive parking and valet management platform that connects customers, garage operators, managers, and valets through an intuitive digital ecosystem. Experience seamless parking reservations, real-time valet tracking, and efficient garage operations.
+
+<br/>
+
+<div stylr="width:100%;">
+<img src="assets/user-home-page.png" alt="user-home-page" style="display:flex; justify-content:center; align-items:center; width: 100%; max-width: 1000px; height: auto;">
+</div>
+
 
 ## ✨ Features
 
@@ -40,10 +44,33 @@
 - **Review System**: Customer feedback and rating system
 - **Reporting Dashboard**: Comprehensive analytics for operators
 
-![Features Overview Image]
-*[Add a features overview image or diagram showing the main capabilities]*
+```
+OpenSpace Platform Features Overview
 
-## 🏗️ Architecture
+🚗 OpenSpace Platform
+├── Customer Portal
+│   ├── Smart Booking System
+│   ├── 3D Garage Visualization
+│   ├── Payment Integration
+│   └── Real-time Tracking
+├── Garage Management
+│   ├── Multi-Garage Support
+│   ├── Slot Management
+│   ├── Real-time Availability
+│   └── Image Management
+├── Valet Services
+│   ├── Pickup/Drop-off
+│   ├── GPS Tracking
+│   ├── Service Coordination
+│   └── Earnings Monitoring
+└── Admin Dashboard
+    ├── User Management
+    ├── Analytics
+    ├── Verification System
+    └── Review System
+```
+
+## �️ Architecture
 
 OpenSpace follows a modern micro-frontend architecture with shared libraries and multiple specialized applications.
 
@@ -64,8 +91,24 @@ openspace/
 └── tools/                   # Development Tools & Scripts
 ```
 
-![Architecture Diagram Image]
-*[Add an architecture diagram showing the relationships between different applications and libraries]*
+## OpenSpace Architecture Overview
+```
+
+┌─────────────────┐    ┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
+│ Frontend Apps   │    │ Shared Libraries│    │ Backend API      │    │External Services│
+├─────────────────┤    ├─────────────────┤    ├──────────────────┤    ├─────────────────┤
+│ • web (Port 3001│    │ • ui (UI Comp.) │    │ • api (Port 3000)│    │ • PostgreSQL DB │
+│   Customer)     │    │ • forms (Forms) │    │   NestJS GraphQL │    │ • Stripe Payment│
+│ • web-admin     │    │ • network (GQL) │    │                  │    │ • NextAuth Auth │
+│   (Port 3004)   │    │ • 3d (Three.js) │    │                  │    │ • Cloudinary Img│
+│ • web-manager   │    │ • util (Utils)  │    │                  │    └─────────────────┘
+│ • web-valet     │    └─────────────────┘    └──────────────────┘             ▲
+└─────────────────┘             ▲                        ▲                     │
+              │                 │                        │                     │
+              └─────────────────┼────────────────────────┼─────────────────────┘
+                                │                        │
+                                └────────────────────────┘
+```
 
 ## 🛠️ Tech Stack
 
@@ -88,10 +131,81 @@ openspace/
 - **Monorepo**: [Nx](https://nx.dev/) workspace management
 - **TypeScript**: Full type safety across the entire stack
 - **Code Quality**: ESLint, Prettier, Husky pre-commit hooks
-- **Testing**: Jest for unit and integration tests
 
-![Tech Stack Image]
-*[Add a tech stack visualization or logo collage]*
+## OpenSpace Tech Stack
+```
+
+🛠️ Development Tools
+├── Nx Workspace (Monorepo management)
+├── TypeScript (Type safety)
+└── Code Quality
+    ├── ESLint (Linting)
+    ├── Prettier (Formatting)
+    └── Husky (Pre-commit hooks)
+
+🌐 Frontend (Next.js 14)
+├── Framework: React + App Router
+├── Styling: Tailwind CSS
+├── State: React Hooks + Context API
+├── 3D Graphics: Three.js
+└── Icons: Tabler Icons
+
+🔧 Backend (NestJS)
+├── API: GraphQL + Apollo Server
+├── Database: PostgreSQL + Prisma ORM
+├── Authentication: JWT + NextAuth.js
+├── Payments: Stripe Integration
+└── Validation: class-validator
+
+🏗️ Infrastructure
+├── Runtime: Node.js v18+
+├── Package Manager: Yarn
+└── Containerization: Docker
+```
+
+## 📋 Version Requirements
+
+To avoid version mismatch issues, ensure you are using the exact versions specified below:
+
+### Runtime & Package Manager
+- **Node.js**: `20.x` (Required)
+- **Yarn**: Latest stable version
+
+### Core Frameworks
+- **NestJS**: `^9.0.0`
+- **Next.js**: `14.1.4`
+- **TypeScript**: `^5.4.3` (root), `^5` (apps), `^4.7.4` (API)
+
+### Database & ORM
+- **Prisma**: `5.11.0`
+- **Prisma Client**: `5.11.0`
+
+### GraphQL & API
+- **Apollo Server**: `4.10.2`
+- **GraphQL**: `16.8.1`
+- **NestJS GraphQL**: `12.1.1`
+
+### Styling
+- **Tailwind CSS**: `3.3.0`
+
+### Development Tools
+- **Nx**: `22.3.3`
+- **ESLint**: `^8.0.1`
+- **Prettier**: `^2.3.2`
+- **Jest**: `29.5.0`
+
+### Key Dependencies Summary
+```
+Node.js: 20.x
+NestJS: ^9.0.0
+Next.js: 14.1.4
+Prisma: 5.11.0
+Prisma Client: 5.11.0
+Apollo Server: 4.10.2
+GraphQL: 16.8.1
+Tailwind CSS: 3.3.0
+Nx: 22.3.3
+```
 
 ## 🚀 Getting Started
 
@@ -164,8 +278,40 @@ Before you begin, ensure you have the following installed:
    yarn nx serve web-valet    # Valet app
    ```
 
-![Setup Process Image]
-*[Add a screenshot or diagram showing the setup process]*
+## OpenSpace Setup Process Flowchart
+```
+
+1. 🚀 START SETUP
+   ├── Check Prerequisites
+   │   ├── Node.js v18+ installed? → If NO → Install Node.js v18+
+   │   ├── Yarn installed? → If NO → Install Yarn
+   │   └── PostgreSQL installed? → If NO → Install PostgreSQL
+   │
+   ├── Clone Repository
+   │   └── git clone https://github.com/your-username/openspace.git
+   │
+   ├── Install Dependencies
+   │   └── yarn install
+   │
+   ├── Configure Environment
+   │   ├── Copy .env.example files to .env
+   │   └── Set DATABASE_URL, NEXTAUTH_SECRET, STRIPE_SECRET_KEY, etc.
+   │
+   ├── Setup Database
+   │   ├── cd apps/api
+   │   ├── npx prisma migrate dev
+   │   └── npx prisma db seed
+   │
+   └── Start Development Servers
+       ├── yarn dev (from project root)
+       └── Access applications:
+           ├── API: http://localhost:3000
+           ├── Customer App: http://localhost:3001
+           ├── Manager App: http://localhost:3002
+           ├── Valet App: http://localhost:3003
+           ├── Admin Panel: http://localhost:3004
+           └── 🎉 SETUP COMPLETE!
+```
 
 ## 📖 Usage
 
@@ -191,10 +337,96 @@ Before you begin, ensure you have the following installed:
 2. **Service Requests**: Receive pickup/drop-off assignments
 3. **GPS Tracking**: Real-time location sharing with customers
 4. **Status Updates**: Mark services as completed
-5. **Earnings Tracking**: Monitor completed services and tips
+5. **Earnings Tracking**: Monitor completed services
 
-![User Interface Images]
-*[Add screenshots of the different user interfaces - customer app, admin panel, manager dashboard, valet app]*
+## Screenshots
+
+### User Features
+
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <img src="assets/login-page.png" alt="Login Page" width="100%">
+      <br><b>Login Page</b>
+    </td>
+    <td width="50%" align="center">
+      <img src="assets/search-map.png" alt="Search Map" width="100%">
+      <br><b>Parking Locations on Map</b>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <img src="assets/garage-booking-1.png" alt="Garage Booking Step 1" width="100%">
+      <br><b>Garage Booking - Step 1</b>
+    </td>
+    <td width="50%" align="center">
+      <img src="assets/garage-booking-2.png" alt="Garage Booking Step 2" width="100%">
+      <br><b>Garage Booking - Step 2</b>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <img src="assets/payment-page.png" alt="Payment Page" width="100%">
+      <br><b>Payment Processing</b>
+    </td>
+    <td width="50%" align="center">
+      <img src="assets/user-booking.png" alt="Booking History" width="100%">
+      <br><b>Booking History</b>
+    </td>
+  </tr>
+</table>
+
+### Manager Features
+
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <img src="assets/manager-home-page.png" alt="Manager Home" width="100%">
+      <br><b>Manager Dashboard</b>
+    </td>
+    <td width="50%" align="center">
+      <img src="assets/garage-creation-page.png" alt="Create Garage" width="100%">
+      <br><b>Create New Garage</b>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <img src="assets/manager-booking-page.png" alt="Booking Approvals" width="100%">
+      <br><b>Approve Bookings</b>
+    </td>
+    <td width="50%" align="center">
+      <img src="assets/valet-list-page.png" alt="Valet Management" width="100%">
+      <br><b>Manage Valets</b>
+    </td>
+  </tr>
+</table>
+
+### Valet Features
+
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <img src="assets/my-trips-page.png" alt="Valet Trips" width="100%">
+      <br><b>Valet's Trips</b>
+    </td>
+    <td width="50%"></td>
+  </tr>
+</table>
+
+### Admin Features
+
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <img src="assets/admin-garage-list.png" alt="Admin Garage List" width="100%">
+      <br><b>Manage All Garages</b>
+    </td>
+    <td width="50%" align="center">
+      <img src="assets/admin-list.png" alt="Admin Management" width="100%">
+      <br><b>Admin Management Panel</b>
+    </td>
+  </tr>
+</table>
 
 ## 🔧 Development
 
@@ -239,8 +471,54 @@ yarn validate       # Run format, type-check, lint, and build
 - **3D**: Three.js utilities for garage visualization
 - **Utils**: Common utilities and TypeScript types
 
-![Project Structure Image]
-*[Add a detailed project structure diagram or folder tree visualization]*
+## OpenSpace Project Structure
+```
+
+openspace/
+├── apps/                          # Applications
+│   ├── api/                       # NestJS GraphQL API Backend
+│   │   ├── src/
+│   │   │   ├── main.ts            # Application entry point
+│   │   │   ├── app.module.ts      # Main application module
+│   │   │   ├── common/            # Shared utilities & guards
+│   │   │   └── models/            # GraphQL resolvers & DTOs
+│   │   ├── prisma/                # Database schema & migrations
+│   │   └── package.json
+│   ├── web/                       # Customer Web App (Port 3001)
+│   │   ├── src/app/               # Next.js app router pages
+│   │   ├── src/components/        # React components
+│   │   └── package.json
+│   ├── web-admin/                 # Admin Management Portal (Port 3004)
+│   ├── web-manager/               # Garage Manager Dashboard
+│   └── web-valet/                 # Valet Mobile Application
+├── libs/                          # Shared Libraries
+│   ├── ui/                        # Reusable UI Component Library
+│   │   ├── src/components/        # UI components
+│   │   └── src/styles/            # Tailwind styles
+│   ├── forms/                     # Form Components & Validation
+│   │   ├── src/
+│   │   │   ├── bookSlot.tsx       # Booking form
+│   │   │   ├── createGarage.tsx   # Garage creation form
+│   │   │   └── schemas.ts         # Zod validation schemas
+│   ├── network/                   # GraphQL Client & API Utilities
+│   │   ├── src/
+│   │   │   ├── config/            # GraphQL configuration
+│   │   │   └── gql/               # Generated GraphQL types
+│   ├── 3d/                        # Three.js 3D Visualization Library
+│   │   ├── src/
+│   │   │   ├── components/        # 3D components
+│   │   │   └── scenes/            # 3D scenes
+│   └── util/                      # Utility Functions & Types
+│       ├── constants.ts           # App constants
+│       ├── date.ts                # Date utilities
+│       └── hooks/                 # Custom React hooks
+├── assets/                        # Static assets (screenshots, images)
+├── tools/                         # Development tools & scripts
+├── package.json                   # Root package.json
+├── nx.json                        # Nx workspace configuration
+├── README.md                      # This file
+└── other config files...
+```
 
 ## 🔐 Security Features
 
@@ -268,24 +546,10 @@ The GraphQL API provides comprehensive documentation accessible at:
 - **Reviews**: Customer feedback system
 - **Verifications**: Admin approval system for garages
 
-![API Documentation Image]
-*[Add a screenshot of the GraphQL playground or API documentation]*
+<div stylr="width:100%;">
+<img src="assets/swagger.png" alt="swagger-image" style="display:flex; justify-content:center; align-items:center; width: 100%; max-width: 1000px; height: auto;">
+</div>
 
-## 🧪 Testing
-
-```bash
-# Run all tests
-yarn test
-
-# Run API tests specifically
-yarn nx test api
-
-# Watch mode for development
-yarn test:watch
-
-# Coverage reports
-yarn test:cov
-```
 
 ## 🚀 Deployment
 
@@ -330,8 +594,53 @@ We welcome contributions to OpenSpace! Please follow these steps:
 - Ensure TypeScript strict mode compliance
 - Use conventional commit messages
 
-![Contributing Image]
-*[Add a diagram or image showing the contribution workflow]*
+```
+OpenSpace Contribution Workflow
+
+👥 CONTRIBUTOR STARTS HERE
+│
+├── 1. Fork Repository on GitHub
+│   └── Create your own copy of the project
+│
+├── 2. Clone Your Fork Locally
+│   └── git clone https://github.com/YOUR_USERNAME/openspace.git
+│
+├── 3. Create Feature Branch
+│   └── git checkout -b feature/your-awesome-feature
+│
+├── 4. Make Your Changes
+│   ├── Write code, add tests, update documentation
+│   └── Follow coding standards and conventions
+│
+├── 5. Run Validation Checks
+│   ├── yarn validate (runs format, lint, type-check, build)
+│   └── yarn test (run tests)
+│
+├── 6. Tests Pass?
+│   ├── YES → Continue to commit
+│   └── NO → Fix issues and re-run validation
+│
+├── 7. Commit Your Changes
+│   └── git commit -m 'feat: add awesome feature description'
+│       (Use conventional commit format)
+│
+├── 8. Push to Your Fork
+│   └── git push origin feature/your-awesome-feature
+│
+├── 9. Create Pull Request
+│   └── Open PR on GitHub with clear description
+│
+├── 10. Code Review Process
+│    ├── Maintainers review your code
+│    └── Feedback provided if needed
+│
+├── 11. Review Approved?
+│    ├── YES → Merge to main branch
+│    └── NO → Address feedback and update PR
+│
+└── 🎉 CONTRIBUTION COMPLETE!
+    └── Your changes are now part of OpenSpace!
+```
 
 ## 📝 License
 
@@ -344,18 +653,3 @@ This project is licensed under the ISC License - see the [LICENSE](LICENSE) file
 - **Next.js Team** for the amazing React framework
 - **Tailwind CSS** for the utility-first styling approach
 - **Three.js** for 3D visualization capabilities
-
-## 📞 Support
-
-For support, email support@openspace.com or join our [Discord community](https://discord.gg/openspace).
-
----
-
-**Built with ❤️ for the future of smart parking**
-
-![OpenSpace Footer Image]
-*[Add a footer image or logo]*
-
----
-
-*Last updated: January 2026*
