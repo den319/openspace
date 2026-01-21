@@ -124,7 +124,7 @@ export const authOptions: NextAuthOptions = {
         sameSite: 'lax',
         path: '/',
         secure: secureCookies,
-        domain: hostName == 'localhost' ? hostName : '.' + rootDomain, // add a . in front so that subdomains are included
+        // domain: hostName == 'localhost' ? hostName : '.' + rootDomain, // add a . in front so that subdomains are included
       },
     },
   },
