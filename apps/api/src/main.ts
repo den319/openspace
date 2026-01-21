@@ -8,7 +8,17 @@ import { LoggingService } from './common/logging/logging.service'
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule)
-  process.env.NODE_ENV !== 'production' && app.enableCors()
+  app.enableCors()
+
+  // app.enableCors({
+  //   origin: [
+  //     'http://localhost:3000',
+  //     'https://openspace.app'
+  //   ],
+  //   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+  //   allowedHeaders: ['Content-Type', 'Authorization'],
+  //   credentials: true,
+  // });
 
   // Apply global exception filter
   app.useGlobalFilters(new GlobalExceptionFilter(app.get(LoggingService)))

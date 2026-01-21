@@ -7,7 +7,7 @@ async function main() {
   prisma = new PrismaClient()
 
   const company = await prisma.company.upsert({
-    where: { displayName: 'OpenSpace' },
+    where: { id: 1 },
     update: {},
     create: {
       displayName: 'OpenSpace',
